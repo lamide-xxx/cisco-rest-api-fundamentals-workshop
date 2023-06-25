@@ -2,6 +2,14 @@
 An introduction to REST APIs with Python and Postman.
 Written by Olamide Abegunde.
 
+## What is a REST API?
+An API (Application Programming Interface) enables two pieces of software to communicate with each other.
+
+Instead of humans interfacing with software, software interfaces with software. Rather than having a human point and click through a workflow, an API exposes functionality to another application.
+
+REST is an API framework built on HTTP, and the interface points are often for web services. When you combine REST and API, you see a simple service interface that enables applications or people to use the HTTP protocol to request objects or information.
+
+## Prerequisites
 
 ## Task 1 - Deck of Cards API
 Most of us are familiar with a classic deck of playing cards - Ace through King, with categories of spades, diamonds, clubs, and hearts. You may not have known there's an API for that! As a simple example, since this API does not require authentication, we can use `curl` to open a brand new deck of cards pointing to a particular endpoint, `https://deckofcardsapi.com/api/deck/new/`.
