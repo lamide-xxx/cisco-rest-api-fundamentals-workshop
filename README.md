@@ -1,4 +1,4 @@
-# cisco-rest-api-fundamentals-workshop
+# REST API Fundamentals
 An introduction to REST APIs with Python and Postman.
 Written by Olamide Abegunde.
 
@@ -91,5 +91,46 @@ You should get a JSON response giving you some information about the cards drawn
 Think of the magic tricks you can do with this API. Okay, let's agree this API does not involve sleight of hand, but you can certainly play some computerized blackjack with this simple API. You can go to https://deckofcardsapi.com/ to learn more
 
 ## Task 2 - Cisco Webex API
+The Cisco Webex product offers a straightforward API used for a collaboration tool for messaging with people online. Unlike the Deck of Cards API, though, you need to authenticate for the service so that the messaging service knows who you are.
+
+
+### Task 2.1 - Get your Access Token
+- You can get a token by signing up for the service, registering for a token, and then logging onto the web site. Go to https://developer.webex.com/ and log in or sign up
+- Navigate to Documentation > Webex APIs
+- Copy your Personal Access Token
+  
+Here's an example:
 
 <img width="1134" alt="image" src="https://github.com/lamide-xxx/cisco-rest-api-fundamentals-workshop/assets/92684648/e6c9ec77-4c84-4fc8-85eb-7353a6690eef">
+
+With the token, you can send API requests by sending the token in a header. Let's walk through an example using curl.  For this example, you need to have curl installed locally. 
+
+### Task 2.2 - Export your Access Token
+- Export your token using the following command:
+```
+ export TOKEN="<paste your token from the developer.webex.com website here with the outside double quote marks>"
+```
+### Task 2.3 - Send an API Request
+- Now, open a terminal window and run this example to send a Webex chat message cia the API. Replace someone@example.com with the recipient's email associated with their Webex account. Please note that this will not work with your own email address - it has to be someone else. You can send to me (oabegund@cisco.com). Replace `<your name>` with your name,
+```
+curl https://webexapis.com/v1/messages \
+ -X POST -H "Authorization:Bearer $TOKEN" \
+ -H "Content-Type: application/json" \
+ --data '{"toPersonEmail":"someone@example.com", "text":"Hi from <Your Name>"}'
+```
+
+The response looks like the example below:
+```
+{
+   "id":"Y2l...mNh",
+   "roomId":"Y2l...WMy",
+   "toPersonEmail":"someone@example.com",
+   "roomType":"direct",
+   "text":"Hi from Cisco",
+   "personId":"Y2l...ODc",
+   "personEmail":"aperson@cisco.com",
+   "created":"2018-12-13T23:32:43.377Z"
+}
+```
+
+The person should see "Hi from Cisco" in their Webex messaging app. If you have Webex teams, you can login to view the sent message
