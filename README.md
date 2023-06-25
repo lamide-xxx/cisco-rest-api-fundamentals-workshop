@@ -142,3 +142,9 @@ The response looks like the example below,This JSON response contains key-value 
 ```
 
 The person should see "Hi from Cisco" in their Webex messaging app. If you have Webex teams, you can login to view the sent message
+
+### Task 2.4 - Above and Beyond.
+- Send a message in bold font
+- Create a new group chat
+
+Hint: you can access the Webex API Documentation here: https://webexteamssdk.readthedocs.io/en/latest/user/api.html
