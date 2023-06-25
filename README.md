@@ -106,12 +106,12 @@ Here's an example:
 With the token, you can send API requests by sending the token in a header. Let's walk through an example using curl.  For this example, you need to have curl installed locally. 
 
 ### Task 2.2 - Export your Access Token
-- Export your token using the following command:
+- Export your token using the following command in the terminal:
 ```
  export TOKEN="<paste your token from the developer.webex.com website here with the outside double quote marks>"
 ```
 ### Task 2.3 - Send an API Request
-- Now, open a terminal window and run this example to send a Webex chat message cia the API. Replace someone@example.com with the recipient's email associated with their Webex account. Please note that this will not work with your own email address - it has to be someone else. You can send to me (oabegund@cisco.com). Replace `<your name>` with your name,
+- Now, open a terminal window and run this example to send a Webex chat message cia the API. Replace `someone@example.com` with the recipient's email associated with their Webex account. Please note that this will not work with your own email address - it has to be someone else. You can send to me (oabegund@cisco.com). Replace `<your name>` with your name,
 ```
 curl https://webexapis.com/v1/messages \
  -X POST -H "Authorization:Bearer $TOKEN" \
@@ -119,7 +119,7 @@ curl https://webexapis.com/v1/messages \
  --data '{"toPersonEmail":"someone@example.com", "text":"Hi from <Your Name>"}'
 ```
 
-The response looks like the example below:
+The response looks like the example below,This JSON response contains key-value pairs to show the data. It shows when the request was created, provides a trackable ID, shows the email address for the `toPersonEmail` the message was sent to, the text of the message, and the ID of the person who sent the message, `PersonEmail`.
 ```
 {
    "id":"Y2l...mNh",
