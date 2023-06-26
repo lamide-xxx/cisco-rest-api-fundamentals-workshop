@@ -181,6 +181,7 @@ The person should see "Hi from Cisco" in their Webex messaging app. If you have 
 
 ### Task 2.4 - Above and Beyond.
 - Send a message in bold font
-- Create a new group chat
+- Create a new group chat (Webex Space)
+- Get a list of all the Webex Spaces you are in
 
 Hint: you can access the Webex API Documentation here: https://webexteamssdk.readthedocs.io/en/latest/user/api.html
