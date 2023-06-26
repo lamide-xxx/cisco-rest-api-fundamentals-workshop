@@ -193,6 +193,8 @@ The Deck of Cards API has a few nice commands you can do with API calls. The API
 
 This exercise gives you a chance to try the Python `requests` library by generating the code with Postman.
 
+**NOTE** -  For this task, you will need an IDE(Integrated Development Environment). If you do not have one installed, you can use the online IDE avilable at https://replit.com/signup
+
 ### Task 3.1 - Import the Postman Collection and Environment
 - Sign Up or Log in to [Postman](https://www.postman.com/)
 - Locate the Deck of Cards Postman Collection that is available in the repo at https://github.com/CiscoDevNet/dne-devfun-code/tree/main/rest-api/postman
@@ -240,7 +242,7 @@ deck = response.json()
 deck_id = deck['deck_id']
 print(deck_id)
 ```
-### Task 3.3  - Run the Code
+### Task 3.4  - Run the Code
 - Change your current working directory to the `python` folder and run:
 ```
 python deck_of_cards.py
