@@ -186,3 +186,24 @@ The person should see "Hi from Cisco" in their Webex messaging app. Check your W
 - Get a list of all the Webex Spaces you are in
 
 Hint: you can access the Webex API Documentation here: https://webexteamssdk.readthedocs.io/en/latest/user/api.html
+
+
+## Task 3 - Generating Code with Postman
+The Deck of Cards API has a few nice commands you can do with API calls. The API does not require authentication, but you can re-use some values like the `deck_id` from previous calls. So it makes sense to use a Postman Collection. With that Collection, you can generate re-usable Python code for card games since the API already has the features you need for the player's actions, the code can add the rules of the game.
+
+This exercise gives you a chance to try the Python `requests` library by generating the code with Postman.
+
+### Task 3.1 - Import the Postman Collection and Environment
+- Locate the Deck of Cards Postman Collection that is available in the repo at https://github.com/CiscoDevNet/dne-devfun-code/tree/main/rest-api/postman
+- Click the `deckofcards.postman_collection.json` file and click the **Copy raw contents** button in the GitHub repository.
+- In your Postman Workspace, create a new collection. Click Import and paste the copied contents. The collection should automatically be detected and saved as 'Deckofcards'.
+- Repeat these steps for the `deckofcardsapi.postman_environment.json` file. This should be saved in the 'Environments' section as deckOfCardsApi or similar
+
+### Task 3.2  - Generate Code using the Imported Postman  Collection
+- In the imported Collection, locate the REST API call that shuffles a deck.
+- To make sure that you shuffle six decks, change the query parameter to `?deck_count=6` in the URI in Postman.
+- Instead of clicking **Send**, click `</>`. The **Code snippet** sidebar opens
+- From the drop-down list, choose **Python - Requests**. Postman generates working code for you. Notice that there are additional programming languages and libraries that you can select in the drop-down list.
+- Click **Copy to Clipboard**.
+
+
