@@ -10,6 +10,41 @@ Instead of humans interfacing with software, software interfaces with software. 
 REST is an API framework built on HTTP, and the interface points are often for web services. When you combine REST and API, you see a simple service interface that enables applications or people to use the HTTP protocol to request objects or information.
 
 ## Prerequisites
+### Webex teams
+- Sign Up to Webex here https://signup.webex.com/sign-up
+- Leave this page open. We will use it later in the labs
+  
+### Terminal
+For Mac - Search for 'Terminal'
+For Windows - Start > Command Prompt
+### Curl
+- Check if you have curl installed. Run the following in your terminal
+  ```
+  curl --version
+  ```
+- If you see a curl version number, skip to the next section. Otherwise continue below
+- Install Homebrew:
+  ```
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+- Once Homebrew is installed, you can install curl by running the following command:
+  ```
+  brew install curl
+  ```
+- After the installation is complete, you should be able to use curl in the Terminal. Run the verison checking command again. You should see a version number come up
+
+### Python3
+- Check if you have Python3 installed. Run the following in your terminal
+  ```
+  python3 --version
+  ```
+- If you see a curl version number, skip to the next section. Otherwise continue below
+- Install Homebrew if you do not have it (reference section above for command)
+- Run the following:
+  ```
+  brew install python@3
+  ```
+- Verify the installation by running the same command as in step 1. It should now display the version number of the installed Python.
 
 ## Task 1 - Deck of Cards API
 Most of us are familiar with a classic deck of playing cards - Ace through King, with categories of spades, diamonds, clubs, and hearts. You may not have known there's an API for that! As a simple example, since this API does not require authentication, we can use `curl` to open a brand new deck of cards pointing to a particular endpoint, `https://deckofcardsapi.com/api/deck/new/`.
@@ -22,7 +57,7 @@ Most of us are familiar with a classic deck of playing cards - Ace through King,
 - When you have Python installed in your terminal, you can get nicer formatted JSON by piping (|) the output to the Python JSON tool like so:
   Note - Piping takes the output of the first command and feeds it to the second command
   ```
-  curl https://deckofcardsapi.com/api/deck/new/ | python -m json.tool
+  curl https://deckofcardsapi.com/api/deck/new/ | python3 -m json.tool
   ```
 You should see this response, which is a newly shuffled deck of cards with a unique ID, `deck_id`. Your `deck_id` value will be different from the example shown here. You see that 52 cards remain in the deck and the deck remains unshuffled in the JSON response.
 ```
@@ -52,7 +87,7 @@ Now the JSON response shows the deck has been shuffled by indicating `true` for 
  ### Task 1.3 - Draw Some Cards
 - With the freshly-shuffled deck, you can use the REST API to draw three cards by using a query parameter, `?count=3`, on the draw resource like so. Remember to substitute your `deck_id` for `sampledeckid` in the request URL
 ```
-curl 'https://deckofcardsapi.com/api/deck/<sampledeckid>/draw/?count=3' | python -m json.tool
+curl 'https://deckofcardsapi.com/api/deck/<sampledeckid>/draw/?count=3' | python3 -m json.tool
 ```
 You should get a JSON response giving you some information about the cards drawn. Something like this:
 ```
