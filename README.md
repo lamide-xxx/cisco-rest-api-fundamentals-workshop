@@ -194,6 +194,7 @@ The Deck of Cards API has a few nice commands you can do with API calls. The API
 This exercise gives you a chance to try the Python `requests` library by generating the code with Postman.
 
 ### Task 3.1 - Import the Postman Collection and Environment
+- Sign Up or Log in to [Postman](https://www.postman.com/)
 - Locate the Deck of Cards Postman Collection that is available in the repo at https://github.com/CiscoDevNet/dne-devfun-code/tree/main/rest-api/postman
 - Click the `deckofcards.postman_collection.json` file and click the **Copy raw contents** button in the GitHub repository.
 - In your Postman Workspace, create a new collection. Click Import and paste the copied contents. The collection should automatically be detected and saved as 'Deckofcards'.
