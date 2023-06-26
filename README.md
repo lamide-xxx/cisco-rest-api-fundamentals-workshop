@@ -206,4 +206,51 @@ This exercise gives you a chance to try the Python `requests` library by generat
 - From the drop-down list, choose **Python - Requests**. Postman generates working code for you. Notice that there are additional programming languages and libraries that you can select in the drop-down list.
 - Click **Copy to Clipboard**.
 
+### Task 3.3  - Setup your `deck_of_cards.py` file
+- Clone the `dne-devfun-code` repository to the development environment with:
+```
+git clone --branch main https://github.com/CiscoDevNet/dne-devfun-code.git
+```
+- In the file browser, open `dne-devfun-code/rest-api/python/` and locate the deck_of_cards.py file.
+- Paste the generated code. Next, you are going to modify that starting point of generated code from Postman.
+- Copy these Python lines to put the returned deck_id into a variable.
+The returned JSON data can be used as a Python dictionary. By putting the response.json() into a dictionary variable, you can use the code repeatedly to get the exact ID you want
+```
+deck = response.json()
+deck_id = deck['deck_id']
+print(deck_id)
+```
 
+Make sure your final deck_of_cards.py file contains similar code to this example:
+```
+import requests
+
+
+url = "https://deckofcardsapi.com/api/deck/new/shuffle/"
+querystring = {"deck_count": "6"}
+headers = {
+'Cache-Control': "no-cache",
+'Postman-Token': "dd1d8ca5-7000-21b2-2230-39969d585419"
+}
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
+deck = response.json()
+deck_id = deck['deck_id']
+print(deck_id)
+```
+### Task 3.3  - Run the Code
+- Change your current working directory to the `python` folder and run:
+```
+python deck_of_cards.py
+```
+Here is example output:
+```
+{"deck_id": "5h7pojfn8rnq", "remaining": 312, "shuffled": true, "success": true}
+5h7pojfn8rnq
+```
+
+If you cannot get the generated code to run, check your environment. One error you can see is: `TypeError: 'instancemethod' object has no attribute '__getitem__'`, which means the requests library is not installed in the environment. Make sure you have activated the virtual environment also. On Windows you would run `C:\> <venv>\Scripts\activate.bat` and on Linux/MacOS you would run source `<venv>/bin/activate` where `<venv>` is the location of the virtual environment.
+
+### Task 3.4 - A Little Extra
+What if you want to update the code so it also outputs an image of the cards? Look in the [Deck of Cards documentation](https://www.deckofcardsapi.com) to see if there's a GET request that sends an image file back.
