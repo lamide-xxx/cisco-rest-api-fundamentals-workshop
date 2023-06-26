@@ -15,7 +15,7 @@ REST is an API framework built on HTTP, and the interface points are often for w
 - Leave this page open. We will use it later in the labs
   
 ### Terminal
-For Mac - Search for 'Terminal'
+For Mac - Search for 'Terminal'  
 For Windows - Start > Command Prompt
 ### Curl
 - Check if you have curl installed. Run the following in your terminal
@@ -154,8 +154,9 @@ With the token, you can send API requests by sending the token in a header. Let'
 ```
  export TOKEN="<paste your token from the developer.webex.com website here with the outside double quote marks>"
 ```
-### Task 2.3 - Send an API Request
-- Now, open a terminal window and run this example to send a Webex chat message cia the API. Replace `someone@example.com` with the recipient's email associated with their Webex account. Please note that this will not work with your own email address - it has to be someone else. You can send to me (oabegund@cisco.com). Replace `<your name>` with your name,
+### Task 2.3 - Use the API
+- Now, open a terminal window and run this example to send a Webex chat message cia the API. Replace `someone@example.com` with the recipient's email associated with their Webex account.
+Please note that this will not work with your own email address - it has to be someone else. You can send to me (oabegund@cisco.com). Replace `<your name>` with your name,
 ```
 curl https://webexapis.com/v1/messages \
  -X POST -H "Authorization:Bearer $TOKEN" \
@@ -177,7 +178,7 @@ The response looks like the example below,This JSON response contains key-value 
 }
 ```
 
-The person should see "Hi from Cisco" in their Webex messaging app. If you have Webex teams, you can login to view the sent message
+The person should see "Hi from Cisco" in their Webex messaging app. Check your Webex Teams to view the sent message
 
 ### Task 2.4 - Above and Beyond.
 - Send a message in bold font
