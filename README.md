@@ -96,7 +96,7 @@ You should get a JSON response giving you some information about the cards drawn
 ```
 
 ### Task 1.4 - Reflection
-Think of the magic tricks you can do with this API. Okay, let's agree this API does not involve sleight of hand, but you can certainly play some computerized blackjack with this simple API. Go to https://deckofcardsapi.com/ to review the full documentation. Think of different things you can do with this API.
+Think of the magic tricks you can do with this API. Okay, let's agree this API does not involve sleight of hand, but you can certainly play some computerized blackjack with this simple API. Go to https://deckofcardsapi.com/ to review the full documentation. 
 - Can you figure out how to return drawn cards to the deck?
 
 ## Task 2 - Cisco Webex API
