@@ -68,7 +68,11 @@ You should see this response, which is a newly shuffled deck of cards with a uni
     "shuffled": false
 }
 ```
-
+- If you are interested in seeing the HTTP response code to your request, you can use the -I or --head option, which instructs curl to retrieve only the headers of the HTTP response. Here's how you can get the response code for the given URL:
+```
+curl -I https://deckofcardsapi.com/api/deck/new/
+```
+You should see the HTTP 200 code meaning the API call was a success
  ### Task 1.2 - Shuffle your Deck of Cards
  - You can shuffle that exact deck of cards with a request that contains the `deck_id`. Copy this command and substitute your `deck_id` for `<sampledeckid>`
    ```
